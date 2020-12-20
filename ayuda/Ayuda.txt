@@ -1,0 +1,27 @@
+
+
+1) Se reparten las cartas.
+
+2) Los jugadores van diciendo en el ORDEN CORRECTO, cuántas cartas creen que van a ganar.
+
+3) Se van tirando las cartas.
+
+4) Se calcula quién ganó y quién perdió
+
+
+A programar:
+
+1) Mostrar el nombre de cada jugador y que tenga las opciones de cuántas cartas cree que va a ganar.
+
+2) En otro componente fijar quién ganó y quién perdió.
+
+3) Mostrar los resultados de la ronda y sumar los scores.
+
+4) Repetir el ciclo
+
+
+
+
+
+La cantidad de "ganar" que hay no puede ser exactamente igual
+a la cantidad de cartas con la que se juegan, siempre le cabe al último.

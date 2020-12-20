@@ -1,0 +1,25 @@
+
+
+.set-choices-container {
+
+    h2 {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+     
+    .choices-container {
+        
+        display: flex;
+        justify-content: center;
+
+        .card {
+            margin: 0 1.5rem;
+        }
+
+        .active-choice {
+            background-color: $white-color;
+            color: $dark-color;
+        }
+    }
+}

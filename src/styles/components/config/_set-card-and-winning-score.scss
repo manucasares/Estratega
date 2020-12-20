@@ -1,0 +1,39 @@
+
+
+.set-card-limit-container,
+.set-winning-score-container {
+
+    h3 {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .cards-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        
+    }
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    font-size: 1.8rem;
+    background-color: $dark_color;
+    border: 2px solid $white-color;
+    color: $white-color;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: $transition;
+    
+    &:hover {
+        background-color: $white-color;
+        color: $dark_color;
+    }
+}
