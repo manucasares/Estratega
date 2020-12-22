@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 import { changePlayerSelector, setChoice } from '../../actions/players';
+import { hideSetChoices } from '../../actions/ui';
 import { BackArrow } from './BackArrow';
 
 
@@ -11,6 +12,7 @@ export const SetChoice = () => {
     const { players, playerSelector } = useSelector( state => state.players );
     const { currentCardsDealt } = useSelector( state => state.config );
     const dispatch = useDispatch();
+
 
     const [ showFinishChoosing, setShowFinishChoosing ] = useState(false);
 
@@ -21,24 +23,28 @@ export const SetChoice = () => {
     const choices = [ ...Array( currentCardsDealt ).keys() ];
     choices.push( choices.length );
 
+ 
+
+ 
 
 
     const handleChoice = ( choice, id ) => {
 
-
         dispatch( setChoice( choice, id ) );
 
         // "si es el último jugador"
-        if ( playerSelector === players.length - 1 ) {
+        if ( playerSelector === ( players.length - 1 ) ) {
             setShowFinishChoosing( true );
             return;
         }
 
         dispatch( changePlayerSelector( playerSelector + 1 ) );
     }
+    
 
     const handleFinishChoosing = () => {
-        console.log('Finish choosing');
+
+        dispatch( hideSetChoices() );
     }
  
 
@@ -70,7 +76,6 @@ export const SetChoice = () => {
                     }
                 </div>
                 
-    
             </div>
 
             

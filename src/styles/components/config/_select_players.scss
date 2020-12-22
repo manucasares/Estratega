@@ -1,8 +1,8 @@
 
 
-.select-player-container {
+.game-config {
 
-    margin: 3rem auto;
+    margin: 2rem auto;
     padding: 1.5rem;
     width: 80%;
     min-height: 400px;
@@ -12,5 +12,12 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .input {
+        margin: 7px 0;
+        padding: 4px 10px;
+        border-style: none;
+        border-radius: 3px;
     }
 }

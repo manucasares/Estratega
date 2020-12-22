@@ -15,7 +15,7 @@ export const GameConfig = () => {
 
     
     return (
-        <div className="select-player-container">
+        <div className="game-config">
 
             {
                 ( showSelectNumberOfPlayers ) &&
@@ -36,8 +36,6 @@ export const GameConfig = () => {
                 ( showSetWinningScore ) &&
                     <SetWinningScore />
             }
-
-            
 
         </div>
     )

@@ -51,7 +51,8 @@ export const SetPlayersNames = () => {
             players.push({
                 id: i,
                 name: player,
-                score: 0
+                score: [0],
+                won: null
             });
         })
 

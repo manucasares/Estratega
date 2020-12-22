@@ -1,17 +1,18 @@
 import { types } from "../types/types";
 
-// const initialState = {
-//     showGameConfig: true,
-//     showSelectNumberOfPlayers: true,
-// }
+const initialState = {
+    showGameConfig: true,
+    showSelectNumberOfPlayers: true,
+}
 
 const fakeInitialState = {
     showGameConfig: false,
-    showSetChoices: true
+    showSetChoices: false,
+    showResults: true
 }
 
 
-export const uiReducer = ( state = fakeInitialState, action ) => {
+export const uiReducer = ( state = initialState, action ) => {
     
 
     switch ( action.type ) {
@@ -44,6 +45,27 @@ export const uiReducer = ( state = fakeInitialState, action ) => {
                 showGameConfig: false,
                 showSetWinningScore: false,
                 showSetChoices: true
+            }
+        
+        case types.uiHideSetChoices:
+            return {
+                ...state,
+                showSetChoices: false,
+                showSetResults: true
+            }
+        
+        case types.uiHideSetResults:
+            return {
+                ...state,
+                showSetResults: false,
+                showResults: true
+            }
+
+        case types.uiHideResults:
+            return {
+                ...state,
+                showSetChoices: true,
+                showResults: false
             }
 
     

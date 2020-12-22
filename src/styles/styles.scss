@@ -2,15 +2,17 @@
 @import './base/settings';
 @import './base/base';
 
+
 // Config
 @import './components/config/select_players';
 @import './components/config/set-card-and-winning-score';
-@import './components/config/set-players-names';
+
 
 // Game Logic
-
 @import './components/gameLogic/set-choices.scss';
 @import './components/gameLogic/choices-icons.scss';
+@import './components/gameLogic/setResults.scss';
+@import './components/gameLogic/results.scss';
 
 
 

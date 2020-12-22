@@ -1,0 +1,32 @@
+
+
+.results {
+    display: flex;
+
+    .player-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        .name,
+        .score {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .name {
+            margin-bottom: 1.5rem;
+        }
+
+        .score {
+            padding: 2px 15px;
+        }
+
+        .current-score {
+            background-color: $white-color;
+            color: $dark-color;
+            border-radius: 3px;
+        }
+    }
+}

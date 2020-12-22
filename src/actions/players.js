@@ -18,3 +18,21 @@ export const changePlayerSelector = ( change ) => ({
     type: types.playersChangeSelector,
     payload: change
 })
+
+export const setRoundWin = ( id ) => ({
+    type: types.playersSetRoundWin,
+    payload: id
+})
+
+export const setRoundLose = ( id ) => ({
+    type: types.playersSetRoundLose,
+    payload: id
+})
+
+export const setScores = () => ({ type: types.playersSetScores })
+
+export const reset = () => ({ type: types.playersReset })
+
+// playerSelector -> 0
+// choice -> null
+// won -> null

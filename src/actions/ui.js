@@ -12,3 +12,7 @@ export const hideSetWinningScore = () => ({ type: types.uiHideSetWinningScore })
 
 // GameLogic
 export const hideSetChoices = () => ({ type: types.uiHideSetChoices })
+
+export const hideSetResults = () => ({ type: types.uiHideSetResults })
+
+export const hideResults = () => ({ type: types.uiHideResults })

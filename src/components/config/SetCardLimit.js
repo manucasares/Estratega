@@ -1,5 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
+
+
 import { setCardLimit } from '../../actions/config';
 import { hideCardLimit } from '../../actions/ui';
 
@@ -9,6 +11,8 @@ export const SetCardLimit = () => {
 
 
     const dispatch = useDispatch();
+
+    const card_options = [ 3, 5, 7, 9 ];
 
 
     const handleClick = ( value ) => {
@@ -23,9 +27,7 @@ export const SetCardLimit = () => {
         setTimeout(() => {
             dispatch( hideCardLimit() );
         }, 500);
-
     }
-
 
     return (
 
@@ -38,7 +40,20 @@ export const SetCardLimit = () => {
 
             <div className="cards-container">
 
-                <div
+                {
+                    card_options.map( option => (
+
+                        <div
+                            className="card"
+                            onClick={ () => handleClick( option ) }
+                            key={option}
+                        >
+                            { option }
+                        </div>
+                    ))
+                }
+
+                {/* <div
                     className="card"
                     onClick={ () => handleClick(5) }
                 >
@@ -55,7 +70,7 @@ export const SetCardLimit = () => {
                     onClick={ () => handleClick(9) }
                 >
                     9
-                </div>
+                </div> */}
 
             </div>
 
