@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -15,6 +15,8 @@ export const SetChoice = () => {
 
 
     const [ showFinishChoosing, setShowFinishChoosing ] = useState(false);
+    const notPossibleChoice = useRef();
+
 
 
     const { name, id, choice: playerChoice } = players[ playerSelector ];
@@ -23,10 +25,9 @@ export const SetChoice = () => {
     const choices = [ ...Array( currentCardsDealt ).keys() ];
     choices.push( choices.length );
 
- 
 
- 
-
+    // Contamos la cantidad de "ganar" elegidas
+    const winCount = players.map( player => player.choice ).reduce( ( acc, ct ) => acc + ct );
 
     const handleChoice = ( choice, id ) => {
 
@@ -38,7 +39,7 @@ export const SetChoice = () => {
             return;
         }
 
-        dispatch( changePlayerSelector( playerSelector + 1 ) );
+        dispatch( changePlayerSelector( playerSelector + 1 ) );     
     }
     
 
@@ -46,7 +47,7 @@ export const SetChoice = () => {
 
         dispatch( hideSetChoices() );
     }
- 
+
 
     return (
         <>
@@ -62,17 +63,30 @@ export const SetChoice = () => {
     
                 <div className="choices-container">
                     {
-                        choices.map( choice => (
-    
-                            <div
-                                className={`card ${ playerChoice === choice && 'active-choice' }`}
-                                onClick={ () => handleChoice( choice, id ) }
-                                key={ choice }
-                            >
-                                { choice }
-                            </div>
-    
-                        ))
+                        choices.map( choice => {
+
+                            // si es el último jugador, y la choice podría permitir que todos ganen
+                            if ( playerSelector === ( players.length - 1 ) && winCount + choice === currentCardsDealt ) {
+                                notPossibleChoice.current = choice;
+                                return;
+                            }
+
+                            if ( playerSelector === ( players.length - 1 ) && choice === notPossibleChoice.current ) {
+                                return;
+                            }
+                            
+                            return (
+
+                                <div
+                                    className={`card ${ playerChoice === choice && 'active-choice' }`}
+                                    onClick={ () => handleChoice( choice, id ) }
+                                    key={ choice }
+                                >
+                                    { choice }
+                                </div>
+
+                            )
+                        })
                     }
                 </div>
                 

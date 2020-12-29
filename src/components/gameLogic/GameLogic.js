@@ -4,11 +4,12 @@ import { useSelector } from 'react-redux';
 import { SetChoice } from './SetChoice';
 import { SetResults } from './SetResults';
 import { Results } from './Results';
+import { WinnerScreen } from './WinnerScreen';
 
 
 export const GameLogic = () => {
 
-    const { showSetChoices, showSetResults, showResults } = useSelector( state => state.ui );
+    const { showSetChoices, showSetResults, showResults, showWinnerScreen } = useSelector( state => state.ui );
  
     // FIXME: Cuidado que el orden de los players tiene que estar bien,
     // quizá es medio confuso para el usuario quién tiene que estar anotado primero.
@@ -30,6 +31,11 @@ export const GameLogic = () => {
             {
                 ( showResults ) &&
                     <Results />
+            }
+
+            {
+                ( showWinnerScreen ) &&
+                    <WinnerScreen />
             }
         </>
         

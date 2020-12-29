@@ -1,18 +1,40 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 
 import { changeCardsDealt } from '../../actions/config';
-import { reset } from '../../actions/players';
-import { hideResults } from '../../actions/ui';
+import { changePlayersOrder, reset } from '../../actions/players';
+import { hideResults, showWinnerScreen } from '../../actions/ui';
 
 
 export const Results = () => {
 
     const { players } = useSelector( state => state.players );
-    let { cardLimit, currentCardsDealt } = useSelector( state => state.config );
+    let { cardLimit, currentCardsDealt, winningScore } = useSelector( state => state.config );
     
     const dispatch = useDispatch();
+  
+
+    // Chequeamos por win
+    const playersWithWinningScore = players.filter( ({ score }) => score.slice( -1 )[0] >= winningScore );
+    
+    
+    useEffect(() => {
+        
+        // si llega uno solo al winningScore
+        if ( playersWithWinningScore.length === 1 ) {
+            dispatch( showWinnerScreen( playersWithWinningScore[0].id ) );
+        }
+
+        // si llega más de uno al winningScore
+        else if ( playersWithWinningScore.length >= 1 ) {
+        
+        }
+        
+    }, [])
+
+
+
 
 
     const handleReset = () => {
@@ -24,6 +46,7 @@ export const Results = () => {
 
         dispatch( changeCardsDealt( +nextCardsDealt ) );
         dispatch( reset() );
+        dispatch( changePlayersOrder() )
         dispatch( hideResults() );
     }
 

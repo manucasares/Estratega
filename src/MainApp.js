@@ -7,6 +7,10 @@ import { GameLogic } from './components/gameLogic/GameLogic';
 
 
 
+
+// TODO:  Chequear por win
+
+
 export const MainApp = () => {
 
     const { showGameConfig } = useSelector( state => state.ui );

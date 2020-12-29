@@ -9,6 +9,7 @@ export const types = {
     uiHideSetChoices: '[UI] Hide set choices',
     uiHideSetResults: '[UI] Hide set results',
     uiHideResults: '[UI] Hide results',
+    uiShowWinnerScreen: '[UI] Show winner screen',
 
 
     configSetNumberOfPlayers: '[Config] Set number of players',
@@ -17,7 +18,6 @@ export const types = {
     configChangeCardsDealt: '[Config] Change cards dealt',
 
     
-
     playersSetPlayers: '[Players] Set players',
     playersSetChoice: '[Players] Set choice',
     playersChangeSelector: '[Players] Change player selector',
@@ -25,7 +25,5 @@ export const types = {
     playersSetRoundLose: '[Players] Set round lose',
     playersSetScores: '[Players] Set scores',
     playersReset: '[Players] Reset',
-
-
-
+    playersChangePlayersOrder: '[Players] Change players order',
 }

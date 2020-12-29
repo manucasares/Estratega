@@ -7,12 +7,12 @@ const initialState = {
 
 const fakeInitialState = {
     showGameConfig: false,
-    showSetChoices: false,
-    showResults: true
+    showSetChoices: true,
+    showResults: false
 }
 
 
-export const uiReducer = ( state = initialState, action ) => {
+export const uiReducer = ( state = fakeInitialState, action ) => {
     
 
     switch ( action.type ) {
@@ -66,6 +66,14 @@ export const uiReducer = ( state = initialState, action ) => {
                 ...state,
                 showSetChoices: true,
                 showResults: false
+            }
+
+        case types.uiShowWinnerScreen:
+            return {
+                ...state,
+                showResults: false,
+                showWinnerScreen: true,
+                winnerId: action.payload
             }
 
     

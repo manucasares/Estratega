@@ -7,22 +7,22 @@ const fakeInitialState = {
         {
             id: 0,
             name: 'Manu',
-            score: [ 0, 6 ],
-            choice: 1,
+            score: [ 0 ],
+            choice: null,
             won: null
         },
         {
             id: 1,
             name: 'Chuqui',
-            score: [ 0, 1 ],
-            choice: 0,
+            score: [ 0 ],
+            choice: null,
             won: null
         },
         {
             id: 2,
             name: 'Rusa',
-            score: [ 0, 0 ],
-            choice: 1,
+            score: [ 0 ],
+            choice: null,
             won: null
         },
     ]
@@ -33,7 +33,7 @@ const initialState = {
 }
 
 
-export const playersReducer = ( state = initialState, action ) => {
+export const playersReducer = ( state = fakeInitialState, action ) => {
 
     
     switch ( action.type ) {
@@ -129,6 +129,20 @@ export const playersReducer = ( state = initialState, action ) => {
                     player.won = null
 
                     return player;
+                })
+            }
+
+        case types.playersChangePlayersOrder:
+            console.log('entró acá');
+            return {
+                ...state,
+                players: state.players.map( ( player, index, arr ) => {
+
+                    // si es el ultimo que se convierta en el primero
+                    return ( index === ( arr.length - 1 ) )
+                            ? arr[ 0 ]
+                            : arr[ index + 1 ]
+
                 })
             }
     

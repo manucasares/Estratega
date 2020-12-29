@@ -33,6 +33,4 @@ export const setScores = () => ({ type: types.playersSetScores })
 
 export const reset = () => ({ type: types.playersReset })
 
-// playerSelector -> 0
-// choice -> null
-// won -> null
+export const changePlayersOrder = () => ({ type: types.playersChangePlayersOrder })

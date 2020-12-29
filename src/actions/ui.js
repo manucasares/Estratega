@@ -16,3 +16,8 @@ export const hideSetChoices = () => ({ type: types.uiHideSetChoices })
 export const hideSetResults = () => ({ type: types.uiHideSetResults })
 
 export const hideResults = () => ({ type: types.uiHideResults })
+
+export const showWinnerScreen = ( id ) => ({
+    type: types.uiShowWinnerScreen,
+    payload: id
+})
