@@ -65,7 +65,8 @@ export const uiReducer = ( state = fakeInitialState, action ) => {
             return {
                 ...state,
                 showSetChoices: true,
-                showResults: false
+                showResults: false,
+                showDrawText: false
             }
 
         case types.uiShowWinnerScreen:
@@ -76,6 +77,11 @@ export const uiReducer = ( state = fakeInitialState, action ) => {
                 winnerId: action.payload
             }
 
+        case types.uiShowDrawText:
+            return {
+                ...state,
+                showDrawText: true
+            }
     
         default:
             return state;

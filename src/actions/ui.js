@@ -21,3 +21,5 @@ export const showWinnerScreen = ( id ) => ({
     type: types.uiShowWinnerScreen,
     payload: id
 })
+
+export const showDrawText = () => ({ type: types.uiShowDrawText })

@@ -5,7 +5,7 @@ const fakeInitialState = {
     totalPlayers: 3,
     cardLimit: [ 1, 3, 5, 7 ],
     currentCardsDealt: 1,
-    winningScore: 5,
+    winningScore: 1,
 }
 
 const initialState = {
@@ -38,6 +38,12 @@ export const configReducer = ( state = fakeInitialState, action ) => {
             return {
                 ...state,
                 currentCardsDealt: action.payload
+            }
+
+        case types.configIncreaseWinningScore:
+            return {
+                ...state,
+                winningScore: state.winningScore + 10
             }
 
         default:

@@ -10,12 +10,14 @@ export const types = {
     uiHideSetResults: '[UI] Hide set results',
     uiHideResults: '[UI] Hide results',
     uiShowWinnerScreen: '[UI] Show winner screen',
+    uiShowDrawText: '[UI] Show draw text',
 
 
     configSetNumberOfPlayers: '[Config] Set number of players',
     configSetCardLimit: '[Config] Set card limit',
     configSetWinningScore: '[Config] Set winning score',
     configChangeCardsDealt: '[Config] Change cards dealt',
+    configIncreaseWinningScore: '[Config] Increase winning score',
 
     
     playersSetPlayers: '[Players] Set players',

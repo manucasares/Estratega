@@ -26,3 +26,5 @@ export const changeCardsDealt = ( nextCardsDealt ) => ({
     payload: nextCardsDealt
 })
 
+export const increaseWinningScore = () => ({ type: types.configIncreaseWinningScore })
+
