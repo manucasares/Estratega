@@ -1,39 +1,39 @@
 import { types } from "../types/types";
 
 
-const fakeInitialState = {
-    playerSelector: 0,
-    players: [
-        {
-            id: 0,
-            name: 'Manu',
-            score: [ 0 ],
-            choice: null,
-            won: null
-        },
-        {
-            id: 1,
-            name: 'Chuqui',
-            score: [ 0 ],
-            choice: null,
-            won: null
-        },
-        {
-            id: 2,
-            name: 'Rusa',
-            score: [ 0 ],
-            choice: null,
-            won: null
-        },
-    ]
-}
+// const fakeInitialState = {
+//     playerSelector: 0,
+//     players: [
+//         {
+//             id: 0,
+//             name: 'Manu',
+//             score: [ 0 ],
+//             choice: null,
+//             won: null
+//         },
+//         {
+//             id: 1,
+//             name: 'Chuqui',
+//             score: [ 0 ],
+//             choice: null,
+//             won: null
+//         },
+//         {
+//             id: 2,
+//             name: 'Rusa',
+//             score: [ 0 ],
+//             choice: null,
+//             won: null
+//         },
+//     ]
+// }
 
 const initialState = {
     playerSelector: 0
 }
 
 
-export const playersReducer = ( state = fakeInitialState, action ) => {
+export const playersReducer = ( state = initialState, action ) => {
 
     
     switch ( action.type ) {

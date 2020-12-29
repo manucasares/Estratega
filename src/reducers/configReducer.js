@@ -1,18 +1,18 @@
 import { types } from "../types/types";
 
 
-const fakeInitialState = {
-    totalPlayers: 3,
-    cardLimit: [ 1, 3, 5, 7 ],
-    currentCardsDealt: 1,
-    winningScore: 1,
-}
+// const fakeInitialState = {
+//     totalPlayers: 3,
+//     cardLimit: [ 1, 3, 5, 7 ],
+//     currentCardsDealt: 1,
+//     winningScore: 25,
+// }
 
 const initialState = {
     currentCardsDealt: 1,
 }
 
-export const configReducer = ( state = fakeInitialState, action ) => {
+export const configReducer = ( state = initialState, action ) => {
 
     switch ( action.type ) {
 

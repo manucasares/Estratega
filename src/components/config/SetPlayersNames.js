@@ -52,7 +52,8 @@ export const SetPlayersNames = () => {
                 id: i,
                 name: player,
                 score: [0],
-                won: null
+                won: null,
+                choice: null
             });
         })
 

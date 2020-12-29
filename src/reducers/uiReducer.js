@@ -5,14 +5,14 @@ const initialState = {
     showSelectNumberOfPlayers: true,
 }
 
-const fakeInitialState = {
-    showGameConfig: false,
-    showSetChoices: true,
-    showResults: false
-}
+// const fakeInitialState = {
+//     showGameConfig: false,
+//     showSetChoices: true,
+//     showResults: false
+// }
 
 
-export const uiReducer = ( state = fakeInitialState, action ) => {
+export const uiReducer = ( state = initialState, action ) => {
     
 
     switch ( action.type ) {
