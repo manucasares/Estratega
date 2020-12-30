@@ -49,7 +49,7 @@ export const Results = () => {
             }
         }
 
-    }, [])
+    }, [ dispatch, players, playersWithWinningScore ])
 
 
 

@@ -68,12 +68,11 @@ export const SetChoice = () => {
                             // si es el último jugador, y la choice podría permitir que todos ganen
                             if ( playerSelector === ( players.length - 1 ) && winCount + choice === currentCardsDealt ) {
                                 notPossibleChoice.current = choice;
-                                console.log(notPossibleChoice.current);
-                                return;
+                                return false;
                             }
 
                             if ( playerSelector === ( players.length - 1 ) && choice === notPossibleChoice.current ) {
-                                return;
+                                return false;
                             }
                             
                             return (
