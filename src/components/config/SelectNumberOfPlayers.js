@@ -38,7 +38,6 @@ export const SelectNumberOfPlayers = () => {
             <h4>¿Cuántos jugadores jugarán?</h4>
             <form onSubmit={ handleSubmit }>
                 <select className="mt-3" ref={selectRef}>
-                    <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
