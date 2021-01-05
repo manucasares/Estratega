@@ -76,7 +76,7 @@ export const SetPlayersNames = () => {
             id="set_players"
         >
             
-            <h4>Decidan quién será el primero en repartir las cartas.</h4>
+            <h4>Establezcan quién va a decidir primero en el primer turno.</h4>
             <p>Agreguen los jugadores en el orden que corresponda.</p>
 
            <form onSubmit={ handleSubmit } >

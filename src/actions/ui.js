@@ -23,3 +23,5 @@ export const showWinnerScreen = ( id ) => ({
 })
 
 export const showDrawText = () => ({ type: types.uiShowDrawText })
+
+export const showResultsTab = () => ({ type: types.uiShowResultsTab })

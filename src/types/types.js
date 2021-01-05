@@ -11,6 +11,7 @@ export const types = {
     uiHideResults: '[UI] Hide results',
     uiShowWinnerScreen: '[UI] Show winner screen',
     uiShowDrawText: '[UI] Show draw text',
+    uiShowResultsTab: '[UI] Show results tab',
 
 
     configSetNumberOfPlayers: '[Config] Set number of players',

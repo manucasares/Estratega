@@ -1,0 +1,14 @@
+
+
+.fa-trophy {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    transition: $transition;
+    &:hover {
+        transform: scale(1.2);
+    }
+}

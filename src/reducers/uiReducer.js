@@ -3,6 +3,7 @@ import { types } from "../types/types";
 const initialState = {
     showGameConfig: true,
     showSelectNumberOfPlayers: true,
+    showResultsTab: false
 }
 
 // const fakeInitialState = {
@@ -81,6 +82,14 @@ export const uiReducer = ( state = initialState, action ) => {
             return {
                 ...state,
                 showDrawText: true
+            }
+
+        case types.uiShowResultsTab:
+            const { showResultsTab } = state;
+
+            return {
+                ...state,
+                showResultsTab: !showResultsTab
             }
     
         default:
