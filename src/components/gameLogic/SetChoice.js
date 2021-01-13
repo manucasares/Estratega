@@ -16,6 +16,7 @@ export const SetChoice = () => {
 
     const [ showFinishChoosing, setShowFinishChoosing ] = useState(false);
     const notPossibleChoice = useRef();
+    const winCount = useRef();
 
 
 
@@ -27,7 +28,21 @@ export const SetChoice = () => {
 
 
     // Contamos la cantidad de "ganar" elegidas
-    const winCount = players.map( player => player.choice ).reduce( ( acc, ct ) => acc + ct );
+    winCount.current = players.map( player => player.choice ).reduce( ( acc, ct ) => acc + ct );
+    winCount.current -= players[ players.length - 1 ].choice
+
+
+
+    console.log(`winCount: ${ winCount.current }`);
+    console.log('render');
+    
+    if ( playerSelector === ( players.length - 1 ) ) {
+        
+        notPossibleChoice.current = currentCardsDealt - winCount.current; 
+        console.log(`notPossibleChoice: ${ notPossibleChoice.current }`);
+
+    }
+
 
     const handleChoice = ( choice, id ) => {
 
@@ -66,14 +81,16 @@ export const SetChoice = () => {
                         choices.map( choice => {
 
                             // si es el último jugador, y la choice podría permitir que todos ganen
-                            if ( playerSelector === ( players.length - 1 ) && winCount + choice === currentCardsDealt ) {
+                            if ( playerSelector === ( players.length - 1 ) && winCount.current + choice === currentCardsDealt ) {
                                 notPossibleChoice.current = choice;
                                 return false;
                             }
 
-                            if ( playerSelector === ( players.length - 1 ) && choice === notPossibleChoice.current ) {
-                                return false;
-                            }
+                            
+                            // if ( playerSelector === ( players.length - 1 ) && choice === notPossibleChoice.current ) {
+                            //     // notPossibleChoice.current = choice;
+                            //     return false;
+                            // }
                             
                             return (
 
