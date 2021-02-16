@@ -4,7 +4,7 @@ import { types } from "../types/types";
 // const fakeInitialState = {
 //     totalPlayers: 3,
 //     cardLimit: [ 1, 3, 5, 7 ],
-//     currentCardsDealt: 1,
+//     currentCardsDealt: 3,
 //     winningScore: 25,
 // }
 
