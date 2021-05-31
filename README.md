@@ -1,4 +1,4 @@
-# Kitchen Inventory
+# Estratega
 
 ![Estratega anotador](https://i.imgur.com/c68Sd2c.png "Estratega anotador")
 
