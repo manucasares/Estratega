@@ -11,13 +11,7 @@ import { ResultsTab } from './ResultsTab';
 
 export const GameLogic = () => {
 
-    const {
-        showSetChoices,
-        showSetResults,
-        showResults,
-        showWinnerScreen,
-        showResultsTab 
-    } = useSelector( state => state.ui );
+    const { showResultsTab, currentScreen } = useSelector( state => state.ui );
  
     // FIXME: Cuidado que el orden de los players tiene que estar bien,
     // quizá es medio confuso para el usuario quién tiene que estar anotado primero.
@@ -25,31 +19,31 @@ export const GameLogic = () => {
     return (
         <>
             {
-                ( showSetChoices ) &&
+                ( currentScreen === 'set_choices' ) &&
                    <SetChoice />
             }
 
             {
-                ( showSetResults ) &&
+                ( currentScreen === 'set_results' ) &&
                     <SetResults />
             }
 
             {
-                ( showResults ) &&
+                ( currentScreen === 'results' ) &&
                     <Results />
             }
 
             {
-                ( showWinnerScreen ) &&
+                ( currentScreen === 'winner_screen' ) &&
                     <WinnerScreen />
             }
-
-            <ResultsIcon />
 
             {
                 ( showResultsTab ) &&
                     <ResultsTab />
             }
+
+            <ResultsIcon />
         </>   
     )
 }

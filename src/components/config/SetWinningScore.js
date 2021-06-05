@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 
-
 import { setWinningScore } from '../../actions/config';
-import { hideSetWinningScore } from '../../actions/ui';
+import { changeSectionScreen } from '../../actions/ui';
+import { changeScreenWithAnimation } from '../../helpers/changeScreen';
 
 
 export const SetWinningScore = () => {
@@ -16,14 +16,9 @@ export const SetWinningScore = () => {
 
         dispatch( setWinningScore( score ) );
 
-        // // UX
-        const set_winning_score = document.getElementById('set_winning_score');
-        set_winning_score.classList.remove('animate__backInRight');
-        set_winning_score.classList.add('animate__backOutLeft');
+        dispatch( changeSectionScreen( 'game_logic' ) );
 
-        setTimeout(() => {
-            dispatch( hideSetWinningScore() );
-        }, 500);
+        changeScreenWithAnimation( 'set_winning_score', 'set_choices', dispatch, 'animate__backInRight' );
     }
 
     return (
@@ -32,12 +27,13 @@ export const SetWinningScore = () => {
             id="set_winning_score"
         >
 
-            <h3>Seleccione el puntaje para ganar.</h3>
+            <h3 className="fz-medium">Seleccione el puntaje para ganar.</h3>
 
             <div className="cards-container">
                 {
                     cards.map( card => (
                         <div
+                            key={ card }
                             className="card"
                             onClick={ () => handleClick( card ) }
                         >

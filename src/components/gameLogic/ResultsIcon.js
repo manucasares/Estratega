@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 
-import { showResultsTab } from '../../actions/ui';
+import { toggleShowResultsTab } from '../../actions/ui';
 
 
 export const ResultsIcon = () => {
@@ -10,7 +10,7 @@ export const ResultsIcon = () => {
 
     const handleClick = () => {
         
-        dispatch( showResultsTab() );
+        dispatch( toggleShowResultsTab() );
     }
 
     return (

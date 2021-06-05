@@ -1,17 +1,11 @@
 
-
 export const types = {
 
-    uiHideSelectNumberOfPlayers: '[UI] Hide select number of players',
-    uiHideSetPlayers: '[UI] Hide set players',
-    uiHideCardLimit: '[UI] Hide card limit',
-    uiHideSetWinningScore: '[UI] Hide set winning score',
-    uiHideSetChoices: '[UI] Hide set choices',
-    uiHideSetResults: '[UI] Hide set results',
-    uiHideResults: '[UI] Hide results',
+    uiChangeSectionScreen: '[UI] Change section screen',
+    uiChangeScreen: '[UI] Change Screen',
+    uiToggleShowResultsTab: '[UI] Toggle show results tab',
     uiShowWinnerScreen: '[UI] Show winner screen',
     uiShowDrawText: '[UI] Show draw text',
-    uiShowResultsTab: '[UI] Show results tab',
 
     configSetNumberOfPlayers: '[Config] Set number of players',
     configSetCardLimit: '[Config] Set card limit',

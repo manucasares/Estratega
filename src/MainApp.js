@@ -7,17 +7,17 @@ import { GameLogic } from './components/gameLogic/GameLogic';
 
 export const MainApp = () => {
 
-    const { showGameConfig } = useSelector( state => state.ui );
+    const { sectionScreen } = useSelector( state => state.ui );
 
     return (
         <>  
             {
-                ( showGameConfig ) &&
+                ( sectionScreen === 'game_config' ) &&
                     <GameConfig />
             }
 
             {
-                ( !showGameConfig ) &&
+                ( sectionScreen === 'game_logic' ) &&
                     <GameLogic />
             }
         </>

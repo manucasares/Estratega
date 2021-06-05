@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setRoundLose, setRoundWin, setScores } from '../../actions/players';
-import { hideSetResults } from '../../actions/ui';
+import { changeScreenWithoutAnimation } from '../../helpers/changeScreen';
 
 
 export const SetResults = () => {
@@ -20,7 +20,7 @@ export const SetResults = () => {
 
     const handleFinishSetResults = () => {
         dispatch( setScores() );
-        dispatch( hideSetResults() );
+        changeScreenWithoutAnimation( 'results', dispatch );
     }
 
     return (

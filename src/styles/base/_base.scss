@@ -3,4 +3,23 @@ html, body {
     background-color: $dark_color;
     overflow-x: hidden;
     padding: 2.5rem 1rem 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-light {
+    background-color: #fff;
+    color: black;
+    margin-top: 1.5em;
+    padding: .7em 1em;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: $transition;
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.fz-medium {
+    font-size: clamp(16px, 2.2vw, 22px);
 }

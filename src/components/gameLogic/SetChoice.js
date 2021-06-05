@@ -1,9 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-
 import { changePlayerSelector, setChoice } from '../../actions/players';
-import { hideSetChoices } from '../../actions/ui';
+import { changeScreenWithoutAnimation } from '../../helpers/changeScreen';
 import { BackArrow } from './BackArrow';
 
 
@@ -29,7 +28,6 @@ export const SetChoice = () => {
 
     if ( playerSelector === ( players.length - 1 ) ) {    
         notPossibleChoice.current = currentCardsDealt - winCount.current; 
-        console.log(`notPossibleChoice: ${ notPossibleChoice.current }`);
     }
 
     const handleChoice = ( choice, id ) => {
@@ -45,7 +43,7 @@ export const SetChoice = () => {
     }
     
     const handleFinishChoosing = () => {
-        dispatch( hideSetChoices() );
+        changeScreenWithoutAnimation( 'set_results', dispatch );
     }
 
     return (

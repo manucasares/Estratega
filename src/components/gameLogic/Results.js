@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { changeCardsDealt, increaseWinningScore } from '../../actions/config';
 import { changePlayersOrder, reset } from '../../actions/players';
-import { hideResults, showDrawText, showWinnerScreen } from '../../actions/ui';
+import { showDrawText, showWinnerScreen } from '../../actions/ui';
+import { changeScreenWithoutAnimation } from '../../helpers/changeScreen';
 
 
 export const Results = () => {
@@ -35,7 +36,7 @@ export const Results = () => {
             // es decir si dos o más personas ganaron al mismo tiempo y quedaron con el mismo score
             if ( scores.filter( score => score === highestScore).length > 1 ) {
 
-                dispatch( showDrawText() );
+                dispatch( showDrawText( true ) );
                 dispatch( increaseWinningScore() );
             } else {
 
@@ -44,7 +45,7 @@ export const Results = () => {
             }
         }
 
-    }, [ dispatch, players, playersWithWinningScore ])
+    }, [ dispatch, players, playersWithWinningScore ] )
 
     const handleReset = () => {
 
@@ -54,8 +55,9 @@ export const Results = () => {
 
         dispatch( changeCardsDealt( +nextCardsDealt ) );
         dispatch( reset() );
-        dispatch( changePlayersOrder() )
-        dispatch( hideResults() );
+        dispatch( changePlayersOrder() );
+        changeScreenWithoutAnimation( 'set_choices', dispatch );
+        dispatch( showDrawText( false ) );
     }
 
     return (

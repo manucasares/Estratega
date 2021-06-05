@@ -9,29 +9,29 @@ import { SetWinningScore } from './SetWinningScore';
 
 export const GameConfig = () => {
 
-    const { showSelectNumberOfPlayers, showSetPlayers, showSetCardLimit, showSetWinningScore } = useSelector( state => state.ui );
+    const { currentScreen } = useSelector( state => state.ui );
 
     return (
-        <div className="game-config">
+        <main className="game-config">
             {
-                ( showSelectNumberOfPlayers ) &&
+                ( currentScreen === 'select_number_of_players' ) &&
                     <SelectNumberOfPlayers />
             }
 
             {
-                ( showSetPlayers ) &&
+                ( currentScreen === 'set_player_names' ) &&
                     <SetPlayersNames />
             }
 
             {
-                ( showSetCardLimit ) &&
+                ( currentScreen === 'set_card_limit' ) &&
                     <SetCardLimit />
             }
 
             {
-                ( showSetWinningScore ) &&
+                ( currentScreen === 'set_winning_score' ) &&
                     <SetWinningScore />
             }
-        </div>
+        </main>
     )
 }

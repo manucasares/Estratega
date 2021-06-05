@@ -2,9 +2,9 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Swal from 'sweetalert2';
 
-import { setPlayers } from '../../actions/players';
-import { hideSetPlayers } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
+import { setPlayers } from '../../actions/players';
+import { changeScreenWithAnimation } from '../../helpers/changeScreen';
 
 export const SetPlayersNames = () => {
 
@@ -51,16 +51,9 @@ export const SetPlayersNames = () => {
             });
         })
 
-        // UX
-        const set_players = document.getElementById('set_players');
-        set_players.classList.remove('animate__fadeIn');
-        set_players.classList.add('animate__backOutLeft');
-    
         dispatch( setPlayers( players ) );
 
-        setTimeout(() => {
-            dispatch( hideSetPlayers() );
-        }, 500);
+        changeScreenWithAnimation( 'set_players', 'set_card_limit', dispatch );
     }
     
     return (
@@ -69,7 +62,7 @@ export const SetPlayersNames = () => {
             id="set_players"
         >
             
-            <h4>Establezcan quién va a decidir primero en el primer turno.</h4>
+            <h4 className="fz-medium">Establezcan quién va a decidir primero en el primer turno.</h4>
             <p>Agreguen los jugadores en el orden que corresponda.</p>
 
            <form onSubmit={ handleSubmit } >

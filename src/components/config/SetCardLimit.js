@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 
 import { setCardLimit } from '../../actions/config';
-import { hideCardLimit } from '../../actions/ui';
+import { changeScreenWithAnimation } from '../../helpers/changeScreen';
 
 export const SetCardLimit = () => {
 
@@ -14,14 +14,7 @@ export const SetCardLimit = () => {
 
         dispatch( setCardLimit( value ) );
 
-        // UX
-        const set_card_limit = document.getElementById('set_card_limit');
-        set_card_limit.classList.remove('animate__backInRight');
-        set_card_limit.classList.add('animate__backOutLeft');
-
-        setTimeout(() => {
-            dispatch( hideCardLimit() );
-        }, 500);
+        changeScreenWithAnimation( 'set_card_limit', 'set_winning_score', dispatch );
     }
 
     return (
@@ -30,7 +23,7 @@ export const SetCardLimit = () => {
             id="set_card_limit"
         >
            
-            <h3>Seleccione el límite de cartas.</h3>
+            <h3 className="fz-medium">Seleccione el límite de cartas.</h3>
 
             <div className="cards-container">
 
