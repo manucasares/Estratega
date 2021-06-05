@@ -24,8 +24,6 @@ export const GameLogic = () => {
 
     return (
         <>
-            
-
             {
                 ( showSetChoices ) &&
                    <SetChoice />
@@ -52,7 +50,6 @@ export const GameLogic = () => {
                 ( showResultsTab ) &&
                     <ResultsTab />
             }
-        </>
-        
+        </>   
     )
 }

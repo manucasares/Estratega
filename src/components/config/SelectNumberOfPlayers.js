@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { setNumberOfPlayers } from '../../actions/config';
 import { hideSelectNumberOfPlayers } from '../../actions/ui';
-
-
 
 export const SelectNumberOfPlayers = () => {
 
@@ -26,8 +25,6 @@ export const SelectNumberOfPlayers = () => {
             dispatch( hideSelectNumberOfPlayers() );
         }, 500);
     }
-
-
     
     return (
         <div

@@ -7,11 +7,10 @@ import { MainApp } from './MainApp';
 
 import './styles/styles.scss';
 
-
 ReactDOM.render(
-    <Provider store={store} >
+    <Provider store={ store } >
         <MainApp />
     </Provider>,
-  document.getElementById('root')
+  document.getElementById( 'root' )
 );
 

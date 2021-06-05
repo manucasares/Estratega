@@ -10,6 +10,7 @@ export const SetWinningScore = () => {
 
     const dispatch = useDispatch();
 
+    const cards = [ 25, 50, 100 ];
 
     const handleClick = ( score ) => {
 
@@ -25,7 +26,6 @@ export const SetWinningScore = () => {
         }, 500);
     }
 
-
     return (
         <div
             className="set-winning-score-container animate__animated animate__backInRight"
@@ -35,26 +35,16 @@ export const SetWinningScore = () => {
             <h3>Seleccione el puntaje para ganar.</h3>
 
             <div className="cards-container">
-
-                <div
-                    className="card"
-                    onClick={ () => handleClick(25) }
-                >
-                    25
-                </div>
-                <div
-                    className="card"
-                    onClick={ () => handleClick(50) }
-                >
-                    50
-                </div>
-                <div
-                    className="card"
-                    onClick={ () => handleClick(100) }
-                >
-                    100
-                </div>
-
+                {
+                    cards.map( card => (
+                        <div
+                            className="card"
+                            onClick={ () => handleClick( card ) }
+                        >
+                            { card }
+                        </div>
+                    ) )
+                }
             </div>
         </div>
     )

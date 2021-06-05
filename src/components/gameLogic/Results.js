@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-
 import { changeCardsDealt, increaseWinningScore } from '../../actions/config';
 import { changePlayersOrder, reset } from '../../actions/players';
 import { hideResults, showDrawText, showWinnerScreen } from '../../actions/ui';
@@ -15,16 +14,14 @@ export const Results = () => {
     
     const dispatch = useDispatch();
   
-
     // Chequeamos por win
     const playersWithWinningScore = players.filter( ({ score }) => score.slice( -1 )[0] >= winningScore );
-    
     
     useEffect(() => {
         
         // si llega uno solo al winningScore
         if ( playersWithWinningScore.length === 1 ) {
-            dispatch( showWinnerScreen( playersWithWinningScore[0].id ) );
+            dispatch( showWinnerScreen( playersWithWinningScore[ 0 ].id ) );
         }
 
         // si llega más de uno al winningScore
@@ -40,8 +37,6 @@ export const Results = () => {
 
                 dispatch( showDrawText() );
                 dispatch( increaseWinningScore() );
-
-
             } else {
 
                 const { id } = players.find( player => player.score.slice(-1)[0] === highestScore )
@@ -51,14 +46,11 @@ export const Results = () => {
 
     }, [ dispatch, players, playersWithWinningScore ])
 
-
-
     const handleReset = () => {
 
         let nextCardsDealt = `${ currentCardsDealt === cardLimit[ cardLimit.length - 1 ]
                                     ? 1
                                     : +currentCardsDealt + 2 }`;
-
 
         dispatch( changeCardsDealt( +nextCardsDealt ) );
         dispatch( reset() );
@@ -66,9 +58,7 @@ export const Results = () => {
         dispatch( hideResults() );
     }
 
-
     return (
-
         <>
             {
                 ( isTemporaryDraw ) &&
@@ -83,7 +73,7 @@ export const Results = () => {
         
                         <div
                             className="player-column"
-                            key={id}
+                            key={ id }
                         >
     
                             <h3 className="name">{ name }</h3>
@@ -100,13 +90,12 @@ export const Results = () => {
                             }
     
                         </div>
-        
                     ))
                 }
     
                 <i
                     className="far fa-arrow-alt-circle-right animate__animated animate__fadeIn"
-                    onClick={handleReset}
+                    onClick={ handleReset }
                 ></i>
             </div>
         </>

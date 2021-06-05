@@ -1,36 +1,30 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Swal from 'sweetalert2';
+
 import { setPlayers } from '../../actions/players';
 import { hideSetPlayers } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
-
-
 
 export const SetPlayersNames = () => {
 
     const { totalPlayers } = useSelector( state => state.config );
     const dispatch = useDispatch();
 
-
-    let playersArr = {};
+    let playersObj = {};
 
     [ ...Array( totalPlayers ) ].forEach( ( player, i ) => {
 
-        playersArr = {
-            ...playersArr,
+        playersObj = {
+            ...playersObj,
             [ `player${ i + 1 }` ]: ''
         }
-
     })
-
 
     const [ formValues, handleInputChange ] = useForm({
-        ...playersArr
+        ...playersObj
     })
 
-    
-    
     const handleSubmit =  (e) => {
         e.preventDefault();
         
@@ -51,7 +45,7 @@ export const SetPlayersNames = () => {
             players.push({
                 id: i,
                 name: player,
-                score: [0],
+                score: [ 0 ],
                 won: null,
                 choice: null
             });
@@ -68,7 +62,6 @@ export const SetPlayersNames = () => {
             dispatch( hideSetPlayers() );
         }, 500);
     }
-
     
     return (
         <div
@@ -103,7 +96,6 @@ export const SetPlayersNames = () => {
                     Siguiente
                 </button>
            </form>
-
         </div>
     )
 }

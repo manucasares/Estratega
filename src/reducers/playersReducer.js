@@ -1,49 +1,17 @@
 import { types } from "../types/types";
 
 
-// const fakeInitialState = {
-//     playerSelector: 0,
-//     players: [
-//         {
-//             id: 0,
-//             name: 'Manu',
-//             score: [ 0 ],
-//             choice: null,
-//             won: null
-//         },
-//         {
-//             id: 1,
-//             name: 'Chuqui',
-//             score: [ 0 ],
-//             choice: null,
-//             won: null
-//         },
-//         {
-//             id: 2,
-//             name: 'Rusa',
-//             score: [ 0 ],
-//             choice: null,
-//             won: null
-//         },
-//     ]
-// }
-
 const initialState = {
     playerSelector: 0
 }
 
-
 export const playersReducer = ( state = initialState, action ) => {
-
-    
+ 
     switch ( action.type ) {
         
-
         case types.playersSetPlayers:
             return {
                 ...state,
-                // acá creo que hay un error, porque borré un "players"
-                // antes estaba players dentro de players
                 players: action.payload
             }
 
@@ -81,7 +49,6 @@ export const playersReducer = ( state = initialState, action ) => {
 
                     return player;
                 })
-
             }
 
         case types.playersSetRoundLose:
@@ -133,15 +100,14 @@ export const playersReducer = ( state = initialState, action ) => {
             }
 
         case types.playersChangePlayersOrder:
-            console.log('entró acá');
             return {
                 ...state,
                 players: state.players.map( ( player, index, arr ) => {
 
                     // si es el ultimo que se convierta en el primero
                     return ( index === ( arr.length - 1 ) )
-                            ? arr[ 0 ]
-                            : arr[ index + 1 ]
+                        ? arr[ 0 ]
+                        : arr[ index + 1 ]
 
                 })
             }
@@ -149,12 +115,4 @@ export const playersReducer = ( state = initialState, action ) => {
         default:
             return state;
     }
-
 }
-
-/*
-
-    ganar =>  0  -> 1 punto
-    ganar =>  1  -> 6 puntos
-
-*/

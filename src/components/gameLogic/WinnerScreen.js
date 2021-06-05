@@ -1,8 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 
-
-
 export const WinnerScreen = () => {
 
     const { winnerId } = useSelector( state => state.ui );
@@ -13,7 +11,7 @@ export const WinnerScreen = () => {
     return (
         <div className="winner-screen animate__animated animate__fadeIn">
             <h2> ¡{ name } gana! </h2>
-            <p> Puntaje final: { score.slice(-1)[0] } </p>
+            <p> Puntaje final: { score.slice( -1 )[ 0 ] } </p>
         </div>
     )
 }

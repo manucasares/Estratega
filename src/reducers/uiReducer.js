@@ -6,19 +6,9 @@ const initialState = {
     showResultsTab: false
 }
 
-// const fakeInitialState = {
-//     showGameConfig: false,
-//     showSetChoices: true,
-//     showResults: false
-// }
-
-
 export const uiReducer = ( state = initialState, action ) => {
     
-
     switch ( action.type ) {
-
-        
         case types.uiHideSelectNumberOfPlayers:
             return {
                 ...state,

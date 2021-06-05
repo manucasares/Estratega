@@ -1,13 +1,5 @@
 import { types } from "../types/types";
 
-
-// const fakeInitialState = {
-//     totalPlayers: 3,
-//     cardLimit: [ 1, 3, 5, 7 ],
-//     currentCardsDealt: 3,
-//     winningScore: 25,
-// }
-
 const initialState = {
     currentCardsDealt: 1,
 }
@@ -15,7 +7,6 @@ const initialState = {
 export const configReducer = ( state = initialState, action ) => {
 
     switch ( action.type ) {
-
         case types.configSetNumberOfPlayers:
             return {
                 ...state,
@@ -49,6 +40,4 @@ export const configReducer = ( state = initialState, action ) => {
         default:
             return state;
     }
-
-
 }

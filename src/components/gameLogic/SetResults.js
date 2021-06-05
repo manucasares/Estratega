@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-
 import { setRoundLose, setRoundWin, setScores } from '../../actions/players';
 import { hideSetResults } from '../../actions/ui';
 
@@ -11,24 +10,18 @@ export const SetResults = () => {
     const { players } = useSelector( state => state.players );
     const dispatch = useDispatch();
 
-
-    const handleWin = ( id ) => {
-        
+    const handleWin = ( id ) => {   
         dispatch( setRoundWin( id ) );
     }
     
     const handleLose = ( id ) => {
-
         dispatch( setRoundLose( id ) );
     }
 
-
     const handleFinishSetResults = () => {
-
         dispatch( setScores() );
         dispatch( hideSetResults() );
     }
-
 
     return (
         <div className="set-results">
@@ -37,7 +30,7 @@ export const SetResults = () => {
     
                     <div
                         className="result"
-                        key={id}
+                        key={ id }
                     >
 
                         <div className="name-choice">
@@ -60,7 +53,6 @@ export const SetResults = () => {
                                 <i className="fas fa-times"></i>
                             </button>
                         </div>
-
                     </div>
     
                 ))
@@ -68,12 +60,11 @@ export const SetResults = () => {
 
             {
                 ( players.every( ({won}) => won !== null ) )
-                    && <i
+                    &&  <i
                             className="far fa-arrow-alt-circle-right animate__animated animate__fadeIn"
-                            onClick={handleFinishSetResults}
+                            onClick={ handleFinishSetResults }
                         ></i>
-            }
-            
+            }         
         </div>
     )
 }
