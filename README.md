@@ -32,6 +32,7 @@ yarn
 
 
 * [React](https://es.reactjs.org/) - El framework web usado
+* [Redux](https://es.redux.js.org/) - Manejo de estado
 * [Sass](https://sass-lang.com/) - Preprocesador CSS
 
 
