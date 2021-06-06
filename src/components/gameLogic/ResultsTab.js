@@ -5,9 +5,12 @@ import { useSelector } from 'react-redux';
 export const ResultsTab = () => {
 
     const { players } = useSelector( state => state.players );
+    const { winningScore } = useSelector( state => state.config );
 
     return (
-        <div className="results-tab-container animate__animated animate__backInRight animate__fast">
+        <section className="results-tab-container animate__animated animate__backInRight animate__fast">
+
+            <h5> Puntaje para ganar: { winningScore } </h5>
 
             {
                 players.map( ({ id, name, score }) => (
@@ -25,6 +28,6 @@ export const ResultsTab = () => {
                     </div>   
                 ))
             }
-        </div>
+        </section>
     )
 }

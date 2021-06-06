@@ -7,7 +7,7 @@ import { showDrawText, showWinnerScreen } from '../../actions/ui';
 import { changeScreenWithoutAnimation } from '../../helpers/changeScreen';
 
 
-export const Results = () => {
+export const Scores = () => {
 
     const { players } = useSelector( state => state.players );
     let { cardLimit, currentCardsDealt, winningScore } = useSelector( state => state.config );
@@ -61,7 +61,7 @@ export const Results = () => {
     }
 
     return (
-        <>
+        <section className="section m5r0">
             {
                 ( isTemporaryDraw ) &&
                     <p className="text-center">
@@ -72,12 +72,10 @@ export const Results = () => {
             <div className="results">
                 {
                     players.map( ({ name, score, id }) => (
-        
                         <div
                             className="player-column"
                             key={ id }
                         >
-    
                             <h3 className="name">{ name }</h3>
     
                             {
@@ -90,16 +88,15 @@ export const Results = () => {
                                     </p>
                                 ))
                             }
-    
                         </div>
                     ))
                 }
     
                 <i
-                    className="far fa-arrow-alt-circle-right animate__animated animate__fadeIn"
+                    className="icon far fa-arrow-alt-circle-right animate__animated animate__fadeIn"
                     onClick={ handleReset }
                 ></i>
             </div>
-        </>
+        </section>
     )
 }

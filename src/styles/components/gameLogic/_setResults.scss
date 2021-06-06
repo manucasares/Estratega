@@ -1,0 +1,47 @@
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    margin: 1.5rem auto;
+
+    .name-choice {
+        padding-left: 1.2rem;
+
+        .name, .choice {
+            text-align: center;
+        }
+
+        .choice span {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-left: .5rem;
+        }
+    }
+
+    .button {
+        margin: 0 .5rem;
+        width: 40px;
+        color: $white-color;
+        border-style: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 1.6rem;
+        border-radius: 5px;
+        cursor: pointer;
+
+        transition: $transition;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    .active-result {
+        background-color: $white-color;
+        color: $dark-color;
+    }
+}
+

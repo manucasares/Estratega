@@ -18,7 +18,7 @@ export const SetCardLimit = () => {
     }
 
     return (
-        <div
+        <section
             className="set-card-limit-container animate__animated animate__backInRight"
             id="set_card_limit"
         >
@@ -40,6 +40,6 @@ export const SetCardLimit = () => {
                     ))
                 }
             </div>
-        </div>
+        </section>
     )
 }

@@ -20,11 +20,10 @@ export const SelectNumberOfPlayers = () => {
     }
     
     return (
-        <div
+        <section
             className="animate__animated animate__fadeIn"
             id="select_number_players"
         >
-            
             <h4 className="fz-medium">¿Cuántos jugadores jugarán?</h4>
             <form onSubmit={ handleSubmit }>
                 <select className="mt-3" ref={ selectRef }>
@@ -39,6 +38,6 @@ export const SelectNumberOfPlayers = () => {
                 </select>
                 <button className="btn btn-light mt-3">Siguiente</button>
             </form>
-        </div>
+        </section>
     )
 }

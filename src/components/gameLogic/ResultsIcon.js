@@ -15,7 +15,7 @@ export const ResultsIcon = () => {
 
     return (
         <i
-            className="fas fa-trophy"
+            className="icon fas fa-trophy"
             onClick={ handleClick }
         ></i>
     )

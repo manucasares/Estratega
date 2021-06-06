@@ -1,0 +1,28 @@
+
+.game-rules-screen {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 1000;
+    background-color: $dark-color;
+    .game-rules {
+        width: 85%;
+        margin: 2rem auto;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        padding: 1rem 1.8rem;
+    
+        .title {
+            text-align: center;
+        }
+    
+        .subtitle {
+            text-decoration: underline;
+        }
+    
+        .rules-text {
+            line-height: 1.5rem;
+            text-align: justify;
+        }
+    }
+}

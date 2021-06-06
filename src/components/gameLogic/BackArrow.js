@@ -10,13 +10,12 @@ export const BackArrow = () => {
     const { playerSelector } = useSelector( state => state.players );
 
     const handleClick = () => {
-
-        dispatch( changePlayerSelector( playerSelector - 1 ) )
+        dispatch( changePlayerSelector( playerSelector - 1 ) );
     }
 
     return (
         <i
-            className="fas fa-undo-alt animate__animated animate__fadeIn"
+            className="icon fas fa-undo-alt animate__animated animate__fadeIn"
             onClick={ handleClick }
         ></i>
     )

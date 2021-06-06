@@ -57,7 +57,7 @@ export const SetPlayersNames = () => {
     }
     
     return (
-        <div
+        <section
             className="animate__animated animate__backInRight animate__fast"
             id="set_players"
         >
@@ -65,18 +65,17 @@ export const SetPlayersNames = () => {
             <h4 className="fz-medium">Establezcan quién va a decidir primero en el primer turno.</h4>
             <p>Agreguen los jugadores en el orden que corresponda.</p>
 
-           <form onSubmit={ handleSubmit } >
-
+            <form onSubmit={ handleSubmit } >
                 {
                     [ ...Array( totalPlayers ) ].map( (e, i) => (
                         
                         <input
+                            key={ i }
                             type="text"
                             className="input"
                             name={ `player${ i + 1 }` }
-                            key={ i }
                             onChange={ handleInputChange }
-                            value={ formValues[i] }
+                            value={ formValues[ i ] }
                             autoComplete="off"
                         />
                     ))
@@ -88,7 +87,7 @@ export const SetPlayersNames = () => {
                 >
                     Siguiente
                 </button>
-           </form>
-        </div>
+            </form>
+        </section>
     )
 }

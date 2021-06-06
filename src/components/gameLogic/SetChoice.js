@@ -47,7 +47,7 @@ export const SetChoice = () => {
     }
 
     return (
-        <>
+        <section className="section">
             {
                 ( playerSelector !== 0 ) &&
                     <BackArrow />
@@ -84,10 +84,10 @@ export const SetChoice = () => {
             {
                 ( showFinishChoosing ) &&
                     <i
-                        className="far fa-arrow-alt-circle-right animate__animated animate__fadeIn"
+                        className="icon far fa-arrow-alt-circle-right animate__animated animate__fadeIn"
                         onClick={ handleFinishChoosing }
                     ></i>
             }     
-        </>
+        </section>
     )
 }

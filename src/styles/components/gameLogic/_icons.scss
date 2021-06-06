@@ -1,0 +1,56 @@
+.icon {
+    position: fixed;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: $transition;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+.fa-undo-alt,
+.fa-arrow-alt-circle-right {
+    top: 1.5rem;
+}
+
+.fa-trophy,
+.fa-book {
+    bottom: 1.875rem;
+}
+
+.fa-undo-alt {
+    left: 3.125rem;
+    color: darken($color: $white-color, $amount: 30);
+    &:hover {
+        color: $white-color;
+        transform: rotate( -340deg );
+    }
+}
+
+.fa-arrow-alt-circle-right {
+    right: 3.125rem;
+    color: $white-color;
+}
+
+.fa-trophy {
+    left: 3.125rem;    
+}
+
+.fa-book {
+    right: 3.125rem;
+    animation: rules 1.4s ease 0s infinite forwards;
+}
+
+
+@keyframes rules {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

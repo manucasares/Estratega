@@ -9,9 +9,9 @@ export const WinnerScreen = () => {
     const { name, score } = players.find( ({ id }) => id === winnerId )
 
     return (
-        <div className="winner-screen animate__animated animate__fadeIn">
+        <section className="winner-screen section animate__animated animate__fadeIn">
             <h2> ¡{ name } gana! </h2>
             <p> Puntaje final: { score.slice( -1 )[ 0 ] } </p>
-        </div>
+        </section>
     )
 }

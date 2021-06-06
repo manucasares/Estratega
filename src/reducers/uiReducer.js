@@ -2,6 +2,7 @@ import { types } from "../types/types";
 
 const initialState = {
     showResultsTab: false,
+    showRulesScreen: false,
     sectionScreen: 'game_config',
     currentScreen: 'select_number_of_players'
 }
@@ -27,6 +28,12 @@ export const uiReducer = ( state = initialState, action ) => {
             return {
                 ...state,
                 showResultsTab: !state.showResultsTab
+            }
+
+        case types.uiToggleShowRulesScreen:
+            return {
+                ...state,
+                showRulesScreen: !state.showRulesScreen
             }
 
         case types.uiChangeSectionScreen:

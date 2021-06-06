@@ -13,6 +13,7 @@ export const showDrawText = ( show ) => ({
 
 export const toggleShowResultsTab = () => ({ type: types.uiToggleShowResultsTab })
 
+export const toggleShowRulesScreen = () => ({ type: types.uiToggleShowRulesScreen })
 
 export const changeSectionScreen = ( sectionScreen ) => ({
     type: types.uiChangeSectionScreen,

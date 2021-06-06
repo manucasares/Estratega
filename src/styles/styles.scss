@@ -8,12 +8,9 @@
 
 // Game Logic
 @import './components/gameLogic/set-choices.scss';
-@import './components/gameLogic/choices-icons.scss';
 @import './components/gameLogic/setResults.scss';
-@import './components/gameLogic/results.scss';
+@import './components/gameLogic/scores';
 @import './components/gameLogic/winner-screen.scss';
-@import './components/gameLogic/results-icon.scss';
+@import './components/gameLogic/icons';
 @import './components/gameLogic/results-tab.scss';
-
-
-
+@import './components/gameLogic/game_rules';

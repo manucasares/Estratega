@@ -4,6 +4,7 @@ export const types = {
     uiChangeSectionScreen: '[UI] Change section screen',
     uiChangeScreen: '[UI] Change Screen',
     uiToggleShowResultsTab: '[UI] Toggle show results tab',
+    uiToggleShowRulesScreen: '[UI] Toggle show rules screen',
     uiShowWinnerScreen: '[UI] Show winner screen',
     uiShowDrawText: '[UI] Show draw text',
 

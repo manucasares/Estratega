@@ -22,7 +22,7 @@ export const SetWinningScore = () => {
     }
 
     return (
-        <div
+        <section
             className="set-winning-score-container animate__animated animate__backInRight"
             id="set_winning_score"
         >
@@ -42,6 +42,6 @@ export const SetWinningScore = () => {
                     ) )
                 }
             </div>
-        </div>
+        </section>
     )
 }

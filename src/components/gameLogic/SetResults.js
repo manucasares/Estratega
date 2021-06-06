@@ -20,11 +20,11 @@ export const SetResults = () => {
 
     const handleFinishSetResults = () => {
         dispatch( setScores() );
-        changeScreenWithoutAnimation( 'results', dispatch );
+        changeScreenWithoutAnimation( 'scores', dispatch );
     }
 
     return (
-        <div className="set-results">
+        <section className="set-results section m5r0">
             {
                 players.map( ({ name, choice, id, won }) => (
     
@@ -59,12 +59,12 @@ export const SetResults = () => {
             }
 
             {
-                ( players.every( ({won}) => won !== null ) )
+                ( players.every( ({ won }) => won !== null ) )
                     &&  <i
-                            className="far fa-arrow-alt-circle-right animate__animated animate__fadeIn"
+                            className="icon far fa-arrow-alt-circle-right animate__animated animate__fadeIn"
                             onClick={ handleFinishSetResults }
                         ></i>
             }         
-        </div>
+        </section>
     )
 }
