@@ -2,7 +2,7 @@
 
 ![Estratega anotador](https://i.imgur.com/c68Sd2c.png "Estratega anotador")
 
-_Un anotador para un juego llamado Estratega realizado con React en el que puedes seguir fácilmente la puntuación de los jugadores. (Desarrollo de screen donde explica las reglas del juego en curso)_
+_Un anotador para un juego llamado Estratega realizado con React en el que puedes seguir fácilmente la puntuación de los jugadores._
 
 ## Comenzando 🚀
 
