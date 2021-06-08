@@ -1,10 +1,10 @@
 // Base-Settings
 @import './base/settings';
 @import './base/base';
+@import './base/cards';
 
 // Config
 @import './components/config/select_players';
-@import './components/config/set-card-and-winning-score';
 
 // Game Logic
 @import './components/gameLogic/set-choices.scss';

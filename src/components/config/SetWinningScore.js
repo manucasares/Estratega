@@ -27,7 +27,7 @@ export const SetWinningScore = () => {
             id="set_winning_score"
         >
 
-            <h3 className="fz-medium">Seleccione el puntaje para ganar.</h3>
+            <h3 className="fz-medium title--center">Seleccione el puntaje para ganar.</h3>
 
             <div className="cards-container">
                 {

@@ -56,7 +56,7 @@ export const SetChoice = () => {
             <div className="set-choices-container animate__animated animate__bounceIn">
                 <h2> { name } </h2>
     
-                <div className="choices-container">
+                <div className="cards-container">
                     {
                         choices.map( choice => {
 

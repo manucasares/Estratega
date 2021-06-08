@@ -29,7 +29,7 @@ export const GameRules = () => {
                 </p>
     
                 <p className="rules-text">
-                    Los jugadores observarán la/s carta/s recibida/s y cada jugador predecirá <strong>cuántas cartas piensa que va a ganar</strong>. Luego las van a ir diciendo en el <strong>orden correspondiente</strong>, por ejemplo, el primero dice: "yo creo que gano 1", el segundo: "yo creo que gano 0", etc...
+                    Los jugadores observarán la/s carta/s recibida/s, sin mostrarla/s, y cada jugador predecirá <strong>cuántas cartas piensa que va a ganar</strong>. Luego las van a ir diciendo en el <strong>orden correspondiente</strong>, por ejemplo, el primero dice: "yo creo que gano 1", el segundo: "yo creo que gano 0", etc...
                 </p>
     
                 <p className="rules-text">

@@ -23,7 +23,7 @@ export const SetCardLimit = () => {
             id="set_card_limit"
         >
            
-            <h3 className="fz-medium">Seleccione el límite de cartas.</h3>
+            <h3 className="fz-medium title--center">Seleccione el límite de cartas.</h3>
 
             <div className="cards-container">
 

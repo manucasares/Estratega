@@ -8,9 +8,9 @@ export const ResultsTab = () => {
     const { winningScore } = useSelector( state => state.config );
 
     return (
-        <section className="results-tab-container animate__animated animate__backInRight animate__fast">
+        <section className="results-tab-container">
 
-            <h5> Puntaje para ganar: { winningScore } </h5>
+            <h5> Puntaje para ganar: <strong>{ winningScore }</strong> </h5>
 
             {
                 players.map( ({ id, name, score }) => (
@@ -18,7 +18,7 @@ export const ResultsTab = () => {
                         key={ id }
                         className="result-tab"
                     >
-                        <span>
+                        <span className="player-name">
                             { name }
                         </span>
 

@@ -7,13 +7,11 @@ import { Scores } from './Scores';
 import { WinnerScreen } from './WinnerScreen';
 import { ResultsIcon } from './ResultsIcon';
 import { ResultsTab } from './ResultsTab';
-import { GameRules } from '../config/GameRules';
-import { RulesIcon } from './RulesIcon';
 
 
 export const GameLogic = () => {
 
-    const { showResultsTab, currentScreen, showRulesScreen } = useSelector( state => state.ui );
+    const { showResultsTab, currentScreen } = useSelector( state => state.ui );
 
     return (
         <main>
@@ -42,13 +40,7 @@ export const GameLogic = () => {
                     <ResultsTab />
             }
 
-            {
-                ( showRulesScreen ) &&
-                    <GameRules />
-            }
-
             <ResultsIcon />
-            <RulesIcon />
         </main>
     )
 }
